@@ -1,0 +1,78 @@
+{
+  "name": "@hobox/plugin-react-use-box-state",
+  "version": "0.1.0",
+  "description": "",
+  "author": "keylenn <darklight_on@163.com>",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/plugin-react-use-box-state.esm.js",
+  "umd:main": "dist/plugin-react-use-box-state.umd.production.min.js",
+  "unpkg": "dist/plugin-react-use-box-state.umd.production.min.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keylenn/boxjs.git"
+  },
+  "keywords": [
+    "react",
+    "box",
+    "hook",
+    "state",
+    "effect",
+    "immutable",
+    "immer"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "test": "tsdx test",
+    "build": "tsdx build --format cjs,esm,umd",
+    "build:check": "yarn lint && yarn test && yarn build && yarn size",
+    "lint": "eslint src --ext js,ts",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "release:alpha": "yarn build:check && standard-version --prerelease alpha && npm publish --tag alpha",
+    "release:beta": "yarn build:check && standard-version --prerelease beta && npm publish --tag beta",
+    "release": "yarn build:check && standard-version && npm publish"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/Keylenn/boxjs/issues"
+  },
+  "size-limit": [
+    {
+      "path": "dist/plugin-react-use-box-state.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/plugin-react-use-box-state.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.4",
+    "@testing-library/react": "^12.1.0",
+    "@types/react": "^17.0.22",
+    "@types/react-dom": "^17.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "size-limit": "^5.0.4",
+    "standard-version": "^9.3.1",
+    "tsdx": "^0.14.1"
+  },
+  "dependencies": {
+    "@hobox/core": "^1.0.0-alpha.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17"
+  }
+}
