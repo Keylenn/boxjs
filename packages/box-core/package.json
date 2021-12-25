@@ -1,0 +1,67 @@
+{
+  "name": "@box/core",
+  "version": "0.1.0",
+  "description": "Framework-independent, lightweight, progressive, immutable data management",
+  "author": "keylenn <darklight_on@163.com>",
+  "homepage": "https://github.com/Keylenn/boxjs/tree/master/packages/box-core#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/core.esm.js",
+  "umd:main": "dist/core.umd.production.min.js",
+  "unpkg": "dist/core.umd.production.min.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keylenn/boxjs.git"
+  },
+  "keywords": [
+    "box",
+    "immer",
+    "immutable",
+    "effect"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "test": "tsdx test",
+    "build": "tsdx build --format cjs,esm,umd",
+    "build:check": "yarn lint && yarn test && yarn build && yarn size",
+    "lint": "eslint src --ext js,ts",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "release:alpha": "yarn build:check && standard-version --prerelease alpha && npm publish --tag alpha",
+    "release:beta": "yarn build:check && standard-version --prerelease beta && npm publish --tag beta",
+    "release": "yarn build:check && standard-version && npm publish"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/Keylenn/boxjs/issues"
+  },
+  "size-limit": [
+    {
+      "path": "dist/core.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/core.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.4",
+    "size-limit": "^5.0.4",
+    "standard-version": "^9.3.1",
+    "tsdx": "^0.14.1"
+  },
+  "dependencies": {
+    "immer": "^9.0.6"
+  }
+}
