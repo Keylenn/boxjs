@@ -1,1 +1,1 @@
-# @box/core
+# @hobox/core

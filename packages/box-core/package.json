@@ -1,6 +1,6 @@
 {
-  "name": "@box/core",
-  "version": "0.1.0",
+  "name": "@hobox/core",
+  "version": "1.0.0-alpha.0",
   "description": "Framework-independent, lightweight, progressive, immutable data management",
   "author": "keylenn <darklight_on@163.com>",
   "homepage": "https://github.com/Keylenn/boxjs/tree/master/packages/box-core#readme",
@@ -21,9 +21,10 @@
   },
   "keywords": [
     "box",
-    "immer",
+    "hook",
+    "effect",
     "immutable",
-    "effect"
+    "immer"
   ],
   "engines": {
     "node": ">=10"
