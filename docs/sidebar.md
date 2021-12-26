@@ -1,7 +1,7 @@
 - [介绍](/)
 - **教程**
 - [基础](base)
-- [高级](advanced)
+- [高级](advanced)l
 - **链接**
-- [Github](https://github.com/Keylenn/boxjs)
+- [Github⭐](https://github.com/Keylenn/boxjs)
 - [NPM](https://www.npmjs.com/package/@hobox/core)
