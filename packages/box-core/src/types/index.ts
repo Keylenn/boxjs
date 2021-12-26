@@ -28,7 +28,7 @@ export interface TrackIdItem {
 
 export type WrappedDataRef<T> = { current: T }
 
-type EffectHook<T> = (option: TriggerOption<T>) => any
+export type EffectHook<T> = (option: TriggerOption<T>) => void
 
 interface DraftTrackEffectOpt<T> {
   trackedData: T

@@ -9,6 +9,7 @@ import {
   WrappedDataRef,
   TrackIdItem,
   TriggerOption,
+  EffectHook,
 } from "../types"
 
 let trackId = 0
@@ -150,7 +151,7 @@ class Box<T> {
     })
   }
 
-  initTrackEffect(effectHook: (option: TriggerOption<T>) => any) {
+  initTrackEffect(effectHook: EffectHook<T>) {
     try {
       // track option
       const option = {
