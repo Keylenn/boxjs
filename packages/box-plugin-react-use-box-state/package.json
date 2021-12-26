@@ -1,6 +1,6 @@
 {
   "name": "@hobox/plugin-react-use-box-state",
-  "version": "0.1.0",
+  "version": "1.1.0-alpha.0",
   "description": "",
   "author": "keylenn <darklight_on@163.com>",
   "homepage": "",
@@ -51,11 +51,11 @@
   "size-limit": [
     {
       "path": "dist/plugin-react-use-box-state.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "5 KB"
     },
     {
       "path": "dist/plugin-react-use-box-state.esm.js",
-      "limit": "10 KB"
+      "limit": "5 KB"
     }
   ],
   "devDependencies": {
