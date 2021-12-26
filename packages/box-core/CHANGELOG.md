@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/Keylenn/boxjs/compare/v1.0.0...v1.0.1) (2021-12-26)
+
+
+### ✏️ Documentation | 文档
+
+* update ([c5ca020](https://github.com/Keylenn/boxjs/commit/c5ca0206474009c9629c37637b704aed20f21d1c))
+
 ## 1.0.0 (2021-12-26)
 
 
