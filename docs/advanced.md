@@ -1,6 +1,6 @@
-# 基础
+# 高级
 
-## 🔩 插件
+## 🔩 插件机制
   插件通常用来拓展为box(实例)对象的功能
 
 ### ❔ 如何开发一个插件
@@ -54,7 +54,7 @@
 ```
 
 
-### 🌰 插件示例
+### 🌰 示例
 
 + logger
 
@@ -71,3 +71,5 @@ function loggerPlugin(box, logToMyService) {
 ```
 
 + [useBoxState](https://github.com/Keylenn/boxjs/blob/box-plugin-react-use-box-state/packages/box-plugin-react-use-box-state/src/core/useBoxState.ts#L6)
+
+☞ [更多插件详情](/plugins)
