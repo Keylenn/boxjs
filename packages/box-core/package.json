@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "Framework-independent, lightweight, progressive, immutable data management",
   "author": "keylenn <darklight_on@163.com>",
-  "homepage": "https://keylenn.github.io/boxjs/index.html",
+  "homepage": "https://keylenn.github.io/boxjs",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/core.esm.js",
