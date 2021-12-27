@@ -34,8 +34,17 @@
 				buttonText : '复制代码',
 				errorText  : '复制失败，请手动复制',
 				successText: '复制成功'
-			}
-	};
+			},
+			plugins: [
+				function(hook, vm) {	
+					hook.beforeEach(function(html) {
+						var url = 'https://github.com/Keylenn/boxjs/tree/box-docs/docs/' + vm.route.file
+						var editHtml = '[📝 Edit Page](' + url + ')\n';
+								return editHtml + html
+						})
+				}
+			]
+	}
 	</script>
 
 	<!-- Required: docsify + docsify-themeable -->
@@ -47,6 +56,7 @@
 	<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2.1.1/dist/docsify-copy-code.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 
 </body>
 
