@@ -16,7 +16,7 @@ export default function useBoxState(box: any, getter?: any) {
   useIsomorphicLayoutEffect(() => {
     const res = box.tryToTrackEffect({
       effectHook: forceRender,
-      trackHook: getter
+      trackHook: getter,
     })
 
     return res?.cleanUpEffect
