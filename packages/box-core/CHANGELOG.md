@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/Keylenn/boxjs/compare/v1.0.1...v1.0.2) (2021-12-28)
+
+
+### ✏️ Documentation | 文档
+
+* update ([17796ae](https://github.com/Keylenn/boxjs/commit/17796ae837ef7d24689eb53284920b5bc79a37ec))
+
+
+### ♻️ Code Refactoring | 代码重构
+
+*  streamline api usage ([1eac78e](https://github.com/Keylenn/boxjs/commit/1eac78edf57d327905c5830e576edcf822e86bf5))
+
 ### [1.0.1](https://github.com/Keylenn/boxjs/compare/v1.0.0...v1.0.1) (2021-12-26)
 
 

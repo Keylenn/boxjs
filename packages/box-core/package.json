@@ -1,6 +1,6 @@
 {
   "name": "@hobox/core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Framework-independent, lightweight, progressive, immutable data management",
   "author": "keylenn <darklight_on@163.com>",
   "homepage": "https://keylenn.github.io/boxjs",
