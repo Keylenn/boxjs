@@ -1,6 +1,6 @@
 {
   "name": "@hobox/plugin-react-use-box-state",
-  "version": "1.1.0-alpha.0",
+  "version": "1.1.0",
   "description": "A hook, make react support hobox data stateful",
   "author": "keylenn <darklight_on@163.com>",
   "homepage": "https://keylenn.github.io/boxjs",
