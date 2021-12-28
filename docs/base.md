@@ -38,20 +38,24 @@ createBox作为工厂函数，接收初始数据`initialData`，返回一个[box
 内置的action，用于修改当前box的数据
 > 参数updater为函数，与immer中的[produce](https://immerjs.github.io/immer/produce)的第二个参数保持一致
 
-#### ```box.initTrackEffect(effectHook)```
+#### ```box.tryToTrackEffect(hookOption)```
 内置的action，用于为数据注入副作用，常用于[插件](/advanced?id=🔩-插件)开发
 
-+ 接受[函数effectHook](#effecthook)作为参数，在数据变化时会触发对应的副作用钩子
++ 接受[hookOption配置](#hookoption)作为参数，box内部会在合适时候触发对应钩子
 
-+ 返回注入副作用的配置[DraftTrackEffectOption](#drafttrackeffectoption)
++ 返回对应的清理函数等配置[TrackEffectReturnType](#trackeffectreturntype)
 
 
 
-##### ```EffectHook```
-```ts
-type EffectHook<T> = (option: TriggerOption<T>) => void
-```
-+ TriggerOption
+##### ```HookOption```
+
+  | 属性 | 说明 | 类型`(T为box数据的类型)` | 是否必需 |
+  | -- | -- | -- | -- |
+  | `effectHook` | 数据变化时触发的副作用钩子 | (option: [TriggerOption](#triggeroption)<T>) => any | ✔ |
+  | `trackHook` | 数据追踪的钩子，可用于针对具体数据注入副作用 | (trackedData: T) => void | ✖ |
+  | `failHook` | 副作用追踪失败时触发 | (reason: any) => void | ✖ |
+
+###### TriggerOption
 
   | 属性 | 说明 | 类型`(T为box数据的类型)` |
   | -- | -- | -- |
@@ -59,11 +63,9 @@ type EffectHook<T> = (option: TriggerOption<T>) => void
   | `prev` | 修改前的box数据 | T |
   | `next` | 修改后的box数据 | T \| null |
 
-##### ```DraftTrackEffectOption```
+##### ```TrackEffectReturnType```
 
 | 属性 | 说明 | 类型`(T为box数据的类型)` |
 | -- | -- | -- |
-| `trackedData` | 当前box数据的临时代理(Proxy)；该数据非必须使用，常用于针对具体数据注入副作用 | T |
-| `cleanUpEffect` | 清理当前注入的副作用；该方法非必须使用，常用于优化 | () => void |
-| `finish` | 结束当前注入副作用；需要注意的是，该方法**必须**被调用 | () => void |
+| `cleanUpEffect` | 清理当前注入的副作用，常用于优化 | () => void |
 
