@@ -12,17 +12,14 @@ export default function useBoxState<T extends Box, U extends Getter<T>>(
 ): [ReturnType<U>, Dispatch<T>]
 export default function useBoxState(box: any, getter?: any) {
   const [, forceRender] = React.useReducer((s) => s + 1, 0)
+
   useIsomorphicLayoutEffect(() => {
-    // init
-    const { trackedData, cleanUpEffect, finish } =
-      box.initTrackEffect(forceRender)
+    const res = box.tryToTrackEffect({
+      effectHook: forceRender,
+      trackHook: getter
+    })
 
-    // start tarck effect
-    getter?.(trackedData)
-
-    // finish
-    finish()
-    return cleanUpEffect
+    return res?.cleanUpEffect
   }, [])
 
   const data = box.getData()
