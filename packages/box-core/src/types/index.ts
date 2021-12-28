@@ -30,10 +30,8 @@ export type WrappedDataRef<T> = { current: T }
 
 export type EffectHook<T> = (option: TriggerOption<T>) => void
 
-interface DraftTrackEffectOpt<T> {
-  trackedData: T
+interface TrackEffectReturnType {
   cleanUpEffect: () => void
-  finish: () => void
 }
 
 export interface TriggerOption<T> {
@@ -42,12 +40,18 @@ export interface TriggerOption<T> {
   next: T | null
 }
 
+export type BoxDataType<T> = T extends Base<infer R> ? R : never
+
+export interface HookOption<T> {
+  effectHook: EffectHook<T>
+  trackHook?: (trackedData: T) => void
+  failHook?: (reason: any) => void
+}
+
 export interface Base<T> {
   getData: () => T
   commit: (updater: Updater<T>) => T
-  initTrackEffect: (effectHook: EffectHook<T>) => DraftTrackEffectOpt<T> | null
+  tryToTrackEffect: (hookOption: HookOption<T>) => TrackEffectReturnType | null
 }
 
 export type Box<T = any> = Base<T>
-
-export type BoxDataType<T> = T extends Base<infer R> ? R : never

@@ -10,6 +10,7 @@ import {
   TrackIdItem,
   TriggerOption,
   EffectHook,
+  HookOption,
 } from "../types"
 
 let trackId = 0
@@ -152,45 +153,55 @@ class Box<T> {
   }
 
   initTrackEffect(effectHook: EffectHook<T>) {
+    // track option
+    const option = {
+      proxies: [] as any[],
+      getHook: ({ target, prop }: any) => {
+        this.tryToUpdateUpperPropEffectHasSubProp(target)
+
+        // set Effect
+        const effect: PropEffect = {
+          trackId,
+          hasSubProp: false,
+          triggerHook: effectHook,
+        }
+
+        if (target !== this.wrappedDataRef) effect.pathId = pathId
+
+        this.setEffect({
+          target,
+          prop,
+          effect,
+        })
+      },
+    }
+
+    const { current: trackedData } = createTrackableData(
+      this.wrappedDataRef,
+      option
+    )
+
+    return {
+      trackedData,
+      cleanUpEffect: () => this.cleanUpEffect(trackId),
+      finish: () => {
+        trackId += 1
+        option.proxies?.forEach((revocableProxy) => revocableProxy?.revoke())
+      },
+    }
+  }
+
+  tryToTrackEffect(option: HookOption<T>) {
     try {
-      // track option
-      const option = {
-        proxies: [] as any[],
-        getHook: ({ target, prop }: any) => {
-          this.tryToUpdateUpperPropEffectHasSubProp(target)
-
-          // set Effect
-          const effect: PropEffect = {
-            trackId,
-            hasSubProp: false,
-            triggerHook: effectHook,
-          }
-
-          if (target !== this.wrappedDataRef) effect.pathId = pathId
-
-          this.setEffect({
-            target,
-            prop,
-            effect,
-          })
-        },
-      }
-
-      const { current: trackedData } = createTrackableData(
-        this.wrappedDataRef,
-        option
+      const { trackedData, cleanUpEffect, finish } = this.initTrackEffect(
+        option.effectHook
       )
-
-      return {
-        trackedData,
-        cleanUpEffect: () => this.cleanUpEffect(trackId),
-        finish: () => {
-          trackId += 1
-          option.proxies?.forEach((revocableProxy) => revocableProxy?.revoke())
-        },
-      }
+      option?.trackHook?.(trackedData)
+      finish()
+      return { cleanUpEffect }
     } catch (error) {
-      console.error("[Error in initTrackEffect] | ", error)
+      console.error("[Error in tryToTrackEffect] | ", error)
+      option?.failHook?.(error)
       return null
     }
   }

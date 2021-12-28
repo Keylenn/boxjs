@@ -12,7 +12,7 @@ export default function createBox(initialData: any) {
 
   const base: Base<any> = {
     getData: () => box.wrappedDataRef.current,
-    initTrackEffect: box.initTrackEffect.bind(box),
+    tryToTrackEffect: box.tryToTrackEffect.bind(box),
     commit: (updater: any) => {
       try {
         const [nextWrappedDataRef, changedPatches] = produceWithPatches(
