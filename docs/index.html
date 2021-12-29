@@ -15,6 +15,7 @@
 <body>
 	<div id="app"></div>
 
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
 	<script>
 		// 4. Docsify Configuration
 		window.$docsify = {
@@ -36,13 +37,7 @@
 				successText: '复制成功'
 			},
 			plugins: [
-				function(hook, vm) {	
-					hook.beforeEach(function(html) {
-						var url = 'https://github.com/Keylenn/boxjs/tree/box-docs/docs/' + vm.route.file
-						var editHtml = '[📝 Edit Page](' + url + ')\n';
-								return editHtml + html
-						})
-				}
+				EditOnGithubPlugin.create( 'https://github.com/Keylenn/boxjs/tree/box-docs/docs/')
 			]
 	}
 	</script>
@@ -56,7 +51,6 @@
 	<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/docsify-copy-code@2.1.1/dist/docsify-copy-code.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 
 </body>
 
