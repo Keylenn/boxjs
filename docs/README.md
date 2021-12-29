@@ -14,6 +14,6 @@ hobox是一种框架无关、轻量级、渐进式的不可变数据管理方案
 + ➰ 跨Iframe共享
 
 ## ⚡快来试试
-主角介绍完啦，[快来试试](/base)它吧~
+主角介绍完啦，[快来试试](https://keylenn.github.io/boxjs/#/base)它吧~
 
 
