@@ -3,6 +3,8 @@
 - [基础](base)
 - [高级](advanced)
 - [插件列表](plugins)
+- **指南**
+- [集成React](react)
 - **链接**
 - [Github⭐](https://github.com/Keylenn/boxjs)
 - [NPM](https://www.npmjs.com/package/@hobox/core)

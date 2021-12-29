@@ -24,7 +24,7 @@ const inc = () => box.commit((draft) => void (draft.current += 1)
 const dec = () => box.commit((draft) => void (draft.current -= 1)
 ```
 
-## 📚API
+## 💡API
 
 ### ```createBox(initialData)```
 createBox作为工厂函数，接收初始数据`initialData`，返回一个[box对象](#box)
