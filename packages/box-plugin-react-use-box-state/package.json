@@ -59,7 +59,7 @@
     }
   ],
   "devDependencies": {
-    "@hobox/core": "^1.0.2",
+    "@hobox/core": "^1.1.0",
     "@size-limit/preset-small-lib": "^5.0.4",
     "@testing-library/react": "^12.1.0",
     "@types/react": "^17.0.22",
@@ -72,6 +72,6 @@
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17",
-    "@hobox/core": "^1.0.2"
+    "@hobox/core": "^1.1.0"
   }
 }

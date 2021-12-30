@@ -1182,10 +1182,10 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
-"@hobox/core@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@hobox/core/-/core-1.0.2.tgz#5822b15d9188fe12fc673990b5a3cfdcf58049db"
-  integrity sha512-l9cNjO4yuSBO23Gtw6r31DrxRhKbqFLoURCdd/ndGd+gA4y8nb+aFK4UQBDBZ4JeVsmV3eA/kQY9J8QnNx7FvQ==
+"@hobox/core@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@hobox/core/-/core-1.1.0.tgz#924ea69d63030ab8a8fc781a1d7acf4147dbd41a"
+  integrity sha512-TxPZ06igEbM4yLdCT1Hea+FfmdoetDPYxjscyVfw1C5LgqEljDAdFQ56r56uAMQYnBGawQDYbkjqGCvJSGrqAQ==
   dependencies:
     immer "^9.0.6"
 
