@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/Keylenn/boxjs/compare/v1.0.2...v1.1.0) (2021-12-30)
+
+
+### ✨ Features | 新功能
+
+* add isBox API ([8d66c56](https://github.com/Keylenn/boxjs/commit/8d66c56bfa7b7aa6ce9f65175bde6c280d50e2c9))
+
 ### [1.0.2](https://github.com/Keylenn/boxjs/compare/v1.0.1...v1.0.2) (2021-12-28)
 
 
