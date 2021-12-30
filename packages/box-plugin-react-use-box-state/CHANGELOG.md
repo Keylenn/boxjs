@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Keylenn/boxjs/compare/v1.1.0...v1.2.0) (2021-12-30)
+
+
+### 🚀 Chore | 构建/工程依赖/工具
+
+* update dep ([cd85064](https://github.com/Keylenn/boxjs/commit/cd85064e257e601b68a205969e81333f68c40ff7))
+
+
+### ✏️ Documentation | 文档
+
+* update ([b4e135b](https://github.com/Keylenn/boxjs/commit/b4e135b080b3afb11077a7ef94a6b0f9580fe59a))
+
+
+### ✨ Features | 新功能
+
+*  check box ([1ebcb96](https://github.com/Keylenn/boxjs/commit/1ebcb96ad51956419db1b5cc6d50b651632b6444))
+
 ## 1.1.0 (2021-12-28)
 
 ### 🚀 Chore | 构建/工程依赖/工具
