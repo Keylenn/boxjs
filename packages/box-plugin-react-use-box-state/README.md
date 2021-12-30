@@ -4,7 +4,7 @@
 
 > 一个hobox插件（React Hook），支持在React中状态化box数据
 
-☞ 快速前往[文档](https://keylenn.github.io/boxjs)了解具体使用~
+☞ 快速前往[文档](https://keylenn.github.io/boxjs/#/plugins?id=%f0%9f%9b%a0useboxstate)了解具体使用~
 
 
 ## 📦 安装
