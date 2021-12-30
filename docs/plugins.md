@@ -1,6 +1,6 @@
 # 插件列表
 
-## 🛠useBoxState-React状态化数据
+## 🛠useBoxState
 > 一个支持在React中状态化box数据的插件，本质是一个[React Hook](https://zh-hans.reactjs.org/docs/hooks-reference.html)
 
 该插件默认会状态化box中所有的数据, 可以通过传入getter方法自定义筛选组合需要状态化的数据; 插件返回值与React内置的[useState](https://zh-hans.reactjs.org/docs/hooks-reference.html#usestate)类似，返回state和对应的更新函数；不同的是，这里的更新函数是[box中内置的commit](/base?id=boxcommitupdater)方法，该方法基于[immer](https://immerjs.github.io/immer/)封装，修改数据更加高效。
