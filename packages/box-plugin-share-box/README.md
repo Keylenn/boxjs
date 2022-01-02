@@ -4,7 +4,7 @@
 
 > 一个hobox插件，让共享hobox更便捷
 
-☞ 快速前往[文档](https://keylenn.github.io/boxjs/#/plugins?id=%f0%9f%9b%a0useboxstate)了解具体使用~
+☞ 快速前往[文档](https://keylenn.github.io/boxjs/#/plugins?id=%f0%9f%9b%a0getsharedbox)了解具体使用~
 
 
 ## 📦 安装
