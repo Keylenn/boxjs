@@ -1,0 +1,1 @@
+# @hobox/box-plugin-share-box

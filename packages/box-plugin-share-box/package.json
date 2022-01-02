@@ -1,0 +1,67 @@
+{
+  "name": "@hobox/plugin-share-box",
+  "version": "1.0.0",
+  "description": "A plugin, make sharing hobox more convenient",
+  "author": "keylenn <darklight_on@163.com>",
+  "homepage": "https://keylenn.github.io/boxjs",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/plugin-share-box.esm.js",
+  "umd:main": "dist/plugin-share-box.umd.production.min.js",
+  "unpkg": "dist/plugin-share-box.umd.production.min.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keylenn/boxjs.git"
+  },
+  "keywords": [
+    "box",
+    "plugin",
+    "share"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "test": "tsdx test",
+    "build": "tsdx build --format cjs,esm,umd",
+    "build:check": "yarn lint && yarn test && yarn build && yarn size",
+    "lint": "eslint src --ext js,ts",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "release:alpha": "yarn build:check && standard-version --prerelease alpha && npm publish --tag alpha",
+    "release:beta": "yarn build:check && standard-version --prerelease beta && npm publish --tag beta",
+    "release": "yarn build:check && standard-version && npm publish"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/Keylenn/boxjs/issues"
+  },
+  "size-limit": [
+    {
+      "path": "dist/plugin-share-box.cjs.production.min.js",
+      "limit": "5 KB"
+    },
+    {
+      "path": "dist/plugin-share-box.esm.js",
+      "limit": "5 KB"
+    }
+  ],
+  "devDependencies": {
+    "@hobox/core": "^1.1.0",
+    "@size-limit/preset-small-lib": "^5.0.4",
+    "size-limit": "^5.0.4",
+    "standard-version": "^9.3.1",
+    "tsdx": "^0.14.1"
+  },
+  "peerDependencies": {
+    "@hobox/core": "^1.1.0"
+  }
+}
