@@ -1,6 +1,6 @@
 {
   "name": "@hobox/plugin-share-box",
-  "version": "1.0.0",
+  "version": "1.1.0-beta.0",
   "description": "A plugin, make sharing hobox more convenient",
   "author": "keylenn <darklight_on@163.com>",
   "homepage": "https://keylenn.github.io/boxjs",
