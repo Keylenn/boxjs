@@ -1,6 +1,6 @@
-# @hobox/box-plugin-share-box
+# @hobox/plugin-share-box
 
-[![npm](https://img.shields.io/npm/v/@hobox/box-plugin-share-box.svg)](https://www.npmjs.com/package/@hobox/box-plugin-share-box) [![node](https://img.shields.io/node/v/@hobox/box-plugin-share-box.svg)](https://keylenn.github.io/boxjs) [![](https://img.shields.io/badge/document-v1-red.svg)](https://keylenn.github.io/boxjs)
+[![npm](https://img.shields.io/npm/v/@hobox/plugin-share-box.svg)](https://www.npmjs.com/package/@hobox/plugin-share-box) [![node](https://img.shields.io/node/v/@hobox/plugin-share-box.svg)](https://keylenn.github.io/boxjs) [![](https://img.shields.io/badge/document-v1-red.svg)](https://keylenn.github.io/boxjs)
 
 > 一个hobox插件，让共享hobox更便捷
 
@@ -9,9 +9,9 @@
 
 ## 📦 安装
 ```sh
-yarn add @hobox/box-plugin-share-box
+yarn add @hobox/plugin-share-box
 ```
 
 ```sh
-npm i @hobox/box-plugin-share-box
+npm i @hobox/plugin-share-box
 ```
