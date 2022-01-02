@@ -19,7 +19,7 @@ export default function getSharedBox<T extends Box>({
 
 function createFallbackBox<T extends Box>(fallback: BoxFallback<T>) {
   const creator = (
-    typeof fallback === "function" ? fallback : createBox(fallback)
+    typeof fallback === "function" ? fallback : () => createBox(fallback)
   ) as () => T
 
   return creator()
