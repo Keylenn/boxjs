@@ -48,3 +48,54 @@ const [name] = useBoxState(box, (data) => d.name)
 [💨 前往查看更多Box和React的故事~](/react)
 
 ## 🛠getSharedBox
+
+> 一个hobox插件，让共享box更便捷
+
+该插件常用于共享其他box实例，如果共享box失败使用回退方案。
+
+💡 API
+
+```const box = getSharedBox(option)```
+
+### ```GetSharedBoxOption```
+
+  | 属性 | 说明 | 类型`(T为待共享的box类型)` | 是否必需 |
+  | -- | -- | -- | -- |
+  | `source` | 共享的box来源 | T \| (() => T) | ✔ |
+  | `fallback` | 共享失败的回退方案，如果传入的是box初始值，插件会自动生成新box；如果传入box生成器，则需要手动创建并返回新box | BoxDataType\<T\> \| (() => T) | ✔ |
+  | `onFail` | 共享失败的回调 | (reason: any) => void | ✖ |
+
+  🌰 示例
+
+  ```js
+  // top
+  const counterBox = createBox(0)
+  window.counterBox = counterBox
+
+  const TopCounter = () => {
+    const [count, setCount] = useBoxState(counterBox);
+    const inc = () => setCount((draft) => void (draft.current += 1)
+    return (
+      <div onClick={inc}>
+        top-count: {count}
+      </div>
+    )
+  }
+
+  // iframe
+    const counterBox = getSharedBox({
+      source: window.top?.counterBox,
+      fallback: 0
+    })
+
+    const IframeCounter = () => {
+      const [count, setCount] = useBoxState(counterBox);
+      const inc = () => setCount((draft) => void (draft.current += 1)
+      return (
+        <div onClick={inc}>
+          iframe-count: {count}
+        </div>
+      )
+    }
+
+  ```
