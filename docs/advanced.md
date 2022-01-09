@@ -58,3 +58,43 @@ function loggerPlugin(box, logToMyService) {
 + [useBoxState](https://github.com/Keylenn/boxjs/blob/box-plugin-react-use-box-state/packages/box-plugin-react-use-box-state/src/core/useBoxState.ts#L13)
 
 ☞ [更多插件详情](/plugins)
+
+
+## 🗳 共享box
+由于hobox是框架无关的，[box对象](/base?id=box)本质上是个Javascript对象，因此box对象之间是可以相互共享的
+
+> 共享方式也很简单，只需要一个提供者和一个消费者，提供者负责创建box对象并暴露，作为消费者只需要使用对应的box对象即可。
+
+你可以用任意的方式实现共享，这里我们推荐使用[🛠插件getSharedBox](/plugins?id=🛠getsharedbox)
+
+### 跨iframe共享
+
+跨iframe共享，最简便的方式就是把box对象挂在上层的window下，下层iframe直接通过top进行消费
+
+下面通过一个计数器Demo作为🌰看看如何实现跨iframe共享box
+
+> 💡 由于iframe不能跨域，下面的Demo无法预览，项目跑起来后直接点击[Demo传送门🚪](https://github-wwgpip-wle66z--3001.local.webcontainer.io)进行预览
+
+
+<iframe src="https://stackblitz.com/edit/github-wwgpip-wle66z?devtoolsheight=33&embed=1&file=app/src/App.js&terminal=start"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="hobox-react-iframe"
+></iframe>
+
+
+
+### 跨应用共享
+
+跨应用共享，目前推荐的方式就是通过webpack5的[Module Federation](https://webpack.docschina.org/concepts/module-federation/)共享box对象,
+一个应用作为提供者，创建box对象并通过配置暴露出去，另一个应用作为消费者，直接引入远程共享的box对象并使用
+
+下面通过一个计数器Demo作为🌰看看如何实现跨应用共享
+
+
+
+<iframe src="https://stackblitz.com/edit/github-wwgpip?embed=1&file=app1/src/App.js&terminal=start"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="hobox-react-apps"
+></iframe>
+
+
