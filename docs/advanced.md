@@ -88,6 +88,8 @@ function loggerPlugin(box, logToMyService) {
 跨应用共享，目前推荐的方式就是通过webpack5的[Module Federation](https://webpack.docschina.org/concepts/module-federation/)共享box对象,
 一个应用作为提供者，创建box对象并通过配置暴露出去，另一个应用作为消费者，直接引入远程共享的box对象并使用
 
+> 💡 如果觉得Module Federation的配置比较繁琐或者是TS用户，推荐使用[EMP](https://emp2.netlify.app/), 直接通过EMP的[empshare 配置](https://emp2.netlify.app/develop/#empshare-%E9%85%8D%E7%BD%AE)共享box对象
+
 下面通过一个计数器Demo作为🌰看看如何实现跨应用共享
 
 
